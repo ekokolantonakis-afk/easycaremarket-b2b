@@ -1,9 +1,4 @@
 import os
-
-port = os.environ.get('PORT', '8080')
-bind = f"0.0.0.0:{port}"
+bind = f"0.0.0.0:{os.environ.get('PORT', '8080')}"
 workers = 1
-worker_class = "sync"
 timeout = 300
-keepalive = 5
-preload_app = True
