@@ -21,7 +21,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Configuration - UPDATED WITH YOUR ACTUAL CREDENTIALS
-DB_PATH = 'pandora_fast.db'
+DB_PATH = os.getenv('DATABASE_URL', 'pandora_fast.db').replace('sqlite:///', '')
 SUPPLIER_USERNAME = os.getenv('PANDORA_USERNAME')  # Your PANDORABOX username
 SUPPLIER_PASSWORD = 'easy6012606'  # Your PANDORABOX password
 SUPPLIER_API_BASE = os.getenv('PANDORA_API_BASE', 'https://api.supplier.com')
