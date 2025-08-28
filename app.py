@@ -1323,16 +1323,4 @@ def admin_interface():
     """Admin interface"""
     return ADMIN_HTML
 
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 8080))
-    app.run(host='0.0.0.0', port=port)
-    if __name__ == '__main__':
-    import os
-    port = int(os.environ.get('PORT', 8080))
-    print(f"Starting Flask app on port {port}")
-    try:
-        app.run(host='0.0.0.0', port=port, debug=True)
-    except Exception as e:
-        print(f"Failed to start app: {e}")
-        import traceback
-        traceback.print_exc()
+
