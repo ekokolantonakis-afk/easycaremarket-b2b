@@ -5,8 +5,8 @@ services:
   github:
     repo: ekokolantonakis-afk/easycaremarket-b2b
     branch: main
-run_command: gunicorn app:app --bind 0.0.0.0:$PORT --worker-tmp-dir /dev/shm
-environment_slug: python
+  run_command: gunicorn app:app --bind 0.0.0.0:$PORT --worker-tmp-dir /dev/shm
+  environment_slug: python
   instance_count: 1
   instance_size_slug: basic-xxs
   envs:
