@@ -1,9 +1,9 @@
-bind = "0.0.0.0:8080"
-workers = 2
+import os
+
+port = os.environ.get('PORT', '8080')
+bind = f"0.0.0.0:{port}"
+workers = 1
 worker_class = "sync"
-worker_connections = 1000
-max_requests = 1000
-max_requests_jitter = 100
 timeout = 300
 keepalive = 5
 preload_app = True
