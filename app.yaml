@@ -5,7 +5,7 @@ services:
   github:
     repo: ekokolantonakis-afk/easycaremarket-b2b
     branch: main
-run_command: python app.py
+run_command: python -c "print('Hello from Python'); import flask; print('Flask works'); import os; print('PORT:', os.environ.get('PORT', 'Not set')); exec(open('app.py').read())"
 environment_slug: python
   instance_count: 1
   instance_size_slug: basic-xxs
