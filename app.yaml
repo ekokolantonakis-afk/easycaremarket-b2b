@@ -1,0 +1,20 @@
+name: easycaremarket-b2b
+services:
+- name: web
+  source_dir: /
+  github:
+    repo: ekokolantonakis-afk/easycaremarket-b2b
+    branch: main
+  run_command: gunicorn --worker-tmp-dir /dev/shm --config gunicorn_config.py app:app
+  environment_slug: python
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  envs:
+  - key: PANDORA_API_BASE
+    value: https://api.qogita.com
+  - key: PANDORA_USERNAME
+    scope: RUN_TIME
+    type: SECRET
+  - key: PANDORA_PASSWORD  
+    scope: RUN_TIME
+    type: SECRET
